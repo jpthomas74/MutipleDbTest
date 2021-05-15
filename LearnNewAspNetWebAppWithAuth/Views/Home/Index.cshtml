@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ClaimData>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+@if(Model != null) { 
+    <div class="container">
+        <table class="table">
+            <tr class="row">
+                <td class="col">Claim Type</td>
+                <td class="col">Claim Value</td>
+            </tr>
+            <tbody>
+                @foreach (ClaimData claim in Model)
+                {
+                <tr class="row">
+                    <td class="col"> @claim.ClType</td>  
+                    <td class="col">@claim.ClValue</td> 
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

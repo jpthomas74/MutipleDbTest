@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Customer>
+@{
+    ViewData["Title"] = "New API from Scratch";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Call to New API from Scratch</p>
+
+@if (Model != null)
+{
+    <div class="container">
+        <table class="table">
+            <tr class="row">
+                <td class="col">Customer Id</td>
+                <td class="col">Customer Name</td>
+            </tr>
+            <tbody>
+                @foreach (Customer customer in Model)
+                {
+                    <tr class="row">
+                        <td class="col"> @customer.Id</td>
+                        <td class="col">@customer.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Department>
+@{
+    ViewData["Title"] = "Trial API";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Call to Trial API</p>
+@if (Model != null)
+{
+    <div class="container">
+        <table class="table">
+            <tr class="row">
+                <td class="col">Department Id</td>
+                <td class="col">Department Name</td>
+            </tr>
+            <tbody>
+                @foreach (Department department in Model)
+                {
+                    <tr class="row">
+                        <td class="col"> @department.Id</td>
+                        <td class="col">@department.Name</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
